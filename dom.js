@@ -14,7 +14,7 @@
 
 let element = (
     <nav>
-    <h1 className ="website">Website</h1>
+    <h1 className ="website">Alexa's Cafe</h1>
     <ul>
     <li>Pricing</li>
     <li>About</li>
