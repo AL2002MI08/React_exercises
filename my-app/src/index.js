@@ -64,7 +64,7 @@
 
 // import React from 'react'
 import ReactDOM from "react-dom";
-function customComponents() {
+function CustomComponents() {
   return (
     <div>
       <img src="react-logo.png" height="50px" />
@@ -79,4 +79,4 @@ function customComponents() {
     </div>
   );
 }
-ReactDOM.render(customComponents(), document.getElementById("root"));
+ReactDOM.render(<CustomComponents/>, document.getElementById("root"));
