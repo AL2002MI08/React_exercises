@@ -1,4 +1,4 @@
-#root {
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -39,4 +39,37 @@
 
 .read-the-docs {
   color: #888;
-}
+} */
+ .nav-bar{
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* line-height: 1.5; */
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 8px;
+ 
+ }
+ .nav-items {
+  list-style: none;
+  display: flex;
+  justify-content: end;
+  gap: 2rem;
+ }
+ .image {
+  width: 100px;
+ }
+ .heading {
+  /* text-align: center; */
+  margin-left: 20px;
+  padding-left: 36px;
+  font-size: 2rem;
+  list-style: none;
+ }
+ .heading > ol {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  
+ }
+ 
