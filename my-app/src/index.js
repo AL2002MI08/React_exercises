@@ -62,21 +62,40 @@
 //     document.getElementById("root")
 // )
 
-// import React from 'react'
+import React from 'react'
 import ReactDOM from "react-dom";
-function CustomComponents() {
+// function CustomComponents() {
+//   return (
+//     <div>
+//       <img src="react-logo.png" height="50px" />
+//       <h1>Fun facts about React</h1>
+//       <ul>
+//         <li>Was first released in 2013</li>
+//         <li>Was originally created by Jordan Walke</li>
+//         <li>Was well over 100k stars</li>
+//         <li>Is maintained by Facebook</li>
+//         <li>Powered by thousands apps including mobile apps</li>
+//       </ul>
+//     </div>
+//   );
+// }
+function Page() {
   return (
     <div>
-      <img src="react-logo.png" height="50px" />
-      <h1>Fun facts about React</h1>
-      <ul>
-        <li>Was first released in 2013</li>
-        <li>Was originally created by Jordan Walke</li>
-        <li>Was well over 100k stars</li>
-        <li>Is maintained by Facebook</li>
-        <li>Powered by thousands apps including mobile apps</li>
-      </ul>
+      <header>
+        <nav>
+          <img src="react-logo.png" width="80px" />
+        </nav>
+      </header>
+      <h1>Reasons I'm excited to learn React</h1>
+      <ol>
+        <li>
+          It's a popular library, so I'll be able to fit in with the cool kids!
+        </li>
+        <li>I'm more likely to get a job as a developer if I know React</li>
+      </ol>
+      <footer><small>© 2024 Kellma development. All rights reserved.</small></footer>
     </div>
   );
 }
-ReactDOM.render(<CustomComponents/>, document.getElementById("root"));
+ReactDOM.render(<Page />, document.getElementById("root"));
