@@ -93,12 +93,12 @@
   font-size: 1.4rem;
   color: #61DAFB;
  } */
-body {
+/* body {
   background-color: #23252C;
   width: 100%;
 }
 .profile {
-  /* height: 100vh; */
+  height: 100vh;
   margin: 60px 40%;
   text-align: center;
 }
@@ -139,4 +139,4 @@ a {
   background-color: #fff;
   border: solid black;
   border-radius: 4px;
-}
+} */
