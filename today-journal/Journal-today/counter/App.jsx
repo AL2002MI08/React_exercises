@@ -1,5 +1,5 @@
 import React from "react"
-
+import WindowTracker from "../components/windowResize"
 export default function App() {
     const [count, setCount] = React.useState(0)
     /**
