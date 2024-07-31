@@ -1,15 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FormToDo from "./components/FormToDo";
 import TodoList from "./components/ToDoList";
 export default function App() {
  
-  const [addToDos, setAddToDos] = useState([]);
+  const [addToDos, setAddToDos] = useState(()=>{
+    const localVal = localStorage.getItem("Item")
+    if(localVal === null) return []
+    return JSON.parse(localVal)
+  });
   function addtodo(title){
     setAddToDos((currentToDo) => [
       ...currentToDo,
       { id: crypto.randomUUID(), title, completed: false },
     ]);
   }
+  useEffect(()=> {
+    return localStorage.setItem("Item",JSON.stringify(addToDos))
+  },[addToDos])
   function toggle(id, completed){
     setAddToDos(currentToDos => {
       return currentToDos.map(todo =>{

@@ -24,7 +24,7 @@ export default function TodoList({addToDos, toggle, deleteTodo}){
 }
 
 TodoList.propTypes ={
-    addToDos: PropTypes.object,
+    addToDos: PropTypes.array,
     toggle: PropTypes.func,
     deleteTodo: PropTypes.func,
 
