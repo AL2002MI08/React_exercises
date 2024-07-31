@@ -7,16 +7,18 @@ import Split from "react-split"
 import { nanoid } from "nanoid"
 
 export default function App() {
+    //set note
     const [notes, setNotes] = React.useState(
         () => JSON.parse(localStorage.getItem("notes")) || []
     )
     const [currentNoteId, setCurrentNoteId] = React.useState("")
-    const [noteTextTemp, setNoteTextTemp] = React.useState("")
+    const [noteTextTemp, setNoteTextTemp] = React.useState("")//for updating notes and setting a delay before new request
     
     const currentNote = 
         notes.find(note => note.id === currentNoteId) 
         || notes[0]
-        const sortedNotes = notes.sort((a,b) => b.updatedAt - a.updatedAt)
+        const sortedNotes = notes.sort((a,b) => b.updatedAt - a.updatedAt)//sort notes based on recently updated
+        //adding snapshot event to listen for updates on firestore doc
         React.useEffect(() => {
             const unsubscribe = onSnapshot(notesCollection, (snapshot) => {
                 const notesArr = snapshot.docs.map(doc => ({
@@ -39,7 +41,7 @@ export default function App() {
         }
     }, [currentNote])
     
-    
+    //debounce using useEffect and timeout
     React.useEffect(() => {
         const timeoutId = setTimeout(() => {
             if(noteTextTemp !== currentNote.body){
@@ -48,7 +50,7 @@ export default function App() {
         }, 500)
         return () => clearTimeout(timeoutId)
     }, [noteTextTemp])
-
+//creating a blank note
     async function createNewNote() {
         const newNote = {
             id: nanoid(),
@@ -57,7 +59,7 @@ export default function App() {
             updatedAt: Date.now()
 
         }
-        const newNoteRef = await addDoc(notesCollection, newNote)
+        const newNoteRef = await addDoc(notesCollection, newNote)//used to push new documnet to firebase
         setCurrentNoteId(newNoteRef.id)
     }
 
@@ -65,12 +67,11 @@ export default function App() {
         const docRef = doc(db, "notes", currentNoteId)
         await setDoc(docRef, {body: text, updatedAt: Date.now()}, {merge: true}) // set a third optional parameter to prevent issues that may arise from overwriting the firebase document
     }
-
+// to delete note once the delete note icon is clicked
     async function deleteNote(noteId) {
       const docRef = doc(db, "notes", noteId)
       await deleteDoc(docRef)
     }
-
     return (
         <main>
             {
