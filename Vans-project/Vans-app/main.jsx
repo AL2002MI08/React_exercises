@@ -1,0 +1,9 @@
+import React from "react"
+import App from "./src/App"
+import ReactDOM from "react-dom/client";
+import './index.css'
+// import './server.js'
+
+
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />)

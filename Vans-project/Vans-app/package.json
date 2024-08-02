@@ -1,0 +1,20 @@
+{
+  "name": "Scrim-s0j80r4puj",
+  "description": "https://v2.scrimba.com/learn-react-router-6-c06/~09",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^5.2.1",
+    "react-router-dom": "^6.4.3",
+    "vite": "latest"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "*"
+  }
+}
