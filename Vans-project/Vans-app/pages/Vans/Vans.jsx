@@ -2,6 +2,17 @@ import React from "react"
 import { Link, useSearchParams } from "react-router-dom"
 import { getVans } from "../../api"
 
+/**
+ * Challenge:
+ * 1. Use the useLoaderData hook to pull in the data from the loader
+ *    function and console.log it.
+ * 2. TBA
+ */
+
+export function loader() {
+    return "Vans data goes here"
+}
+
 export default function Vans() {
     const [searchParams, setSearchParams] = useSearchParams()
     const [vans, setVans] = React.useState([])
